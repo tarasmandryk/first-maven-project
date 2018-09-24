@@ -1,1 +1,1 @@
-Hello, Taras!
+Hello, World! version 3
