@@ -17,7 +17,7 @@ pipeline {
 stages{
         stage('Build'){
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
             post {
                 success {
@@ -32,7 +32,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "scp -i '/Docs/Projects/GitRepo/learning-terraform/single ec2 instace/secret/private_key.pem' /Jenkins/workspace/package/webapp/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
+                        bat "scp -i '/Docs/Projects/GitRepo/learning-terraform/single ec2 instace/secret/private_key.pem' **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
                     }
                 }
 
