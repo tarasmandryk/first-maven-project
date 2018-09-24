@@ -6,8 +6,8 @@ pipeline {
     }
 
     parameters {
-         string(name: 'tomcat_dev', defaultValue: '52.90.109.154', description: 'Staging Server')
-         string(name: 'tomcat_prod', defaultValue: '54.90.75.34', description: 'Production Server')
+         string(name: 'tomcat_dev', defaultValue: '18.208.178.7', description: 'Staging Server')
+         string(name: 'tomcat_prod', defaultValue: '18.206.223.166', description: 'Production Server')
     }
 
     triggers {
@@ -32,13 +32,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat ' "C:/Program Files/Git/usr/bin/scp" -i "D:/Docs/Projects/GitRepo/learning-terraform/single ec2 instace/secret/private_key.pem" **/target/*.war ec2-user@52.90.109.154:/var/lib/tomcat7/webapps'
+                        bat ' "C:/Program Files/Git/usr/bin/scp" -i "D:/Docs/Projects/GitRepo/learning-terraform/single ec2 instace/secret/private_key.pem" **/target/*.war ec2-user@18.208.178.7:/var/lib/tomcat7/webapps'
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        bat ' "C:/Program Files/Git/usr/bin/scp" -i "D:/Docs/Projects/GitRepo/learning-terraform/single ec2 instace/secret/private_key.pem" **/target/*.war ec2-user@54.90.75.34:/var/lib/tomcat7/webapps'
+                        bat ' "C:/Program Files/Git/usr/bin/scp" -i "D:/Docs/Projects/GitRepo/learning-terraform/single ec2 instace/secret/private_key.pem" **/target/*.war ec2-user@18.206.223.166:/var/lib/tomcat7/webapps'
                     }
                 }
             }
