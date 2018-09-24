@@ -38,7 +38,7 @@ stages{
 
                 stage ("Deploy to Production"){
                     steps {
-                        bat ' "C:/Program Files/Git/usr/bin/scp" -i "D:/Docs/Projects/GitRepo/learning-terraform/single ec2 instace/secret/private_key.pem" **/target/*.war ec2-user@18.206.223.166:/var/lib/tomcat7/webapps'
+                        bat ' winscp.exe -i "D:/Docs/Projects/GitRepo/learning-terraform/single ec2 instace/secret/private_key.pem" **/target/*.war ec2-user@18.206.223.166:/var/lib/tomcat7/webapps'
                     }
                 }
             }
