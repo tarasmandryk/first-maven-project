@@ -32,7 +32,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat ' "C:/Program Files/Git/usr/bin/scp" -i "D:/Docs/Projects/GitRepo/learning-terraform/single ec2 instace/secret/private_key.pem" **/target/*.war ec2-user@18.208.178.7:/var/lib/tomcat7/webapps'
+                        bat ' "C:\Program Files (x86)\WinSCP\winscp.exe" -i "D:/Docs/Projects/GitRepo/learning-terraform/single ec2 instace/secret/private_key.pem" **/target/*.war ec2-user@18.208.178.7:/var/lib/tomcat7/webapps'
                     }
                 }
 
