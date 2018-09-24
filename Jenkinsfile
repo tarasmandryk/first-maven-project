@@ -32,13 +32,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat ' "C:/Program Files/Git/usr/bin/scp" -i "D:/Docs/Projects/GitRepo/learning-terraform/single ec2 instace/secret/private_key.pem" **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps'
+                        bat ' "C:/Program Files/Git/usr/bin/scp" -i "D:/Docs/Projects/GitRepo/learning-terraform/single ec2 instace/secret/private_key.pem" **/target/*.war ec2-user@52.90.109.154:/var/lib/tomcat7/webapps'
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        bat ' "C:/Program Files/Git/usr/bin/scp" -i "D:/Docs/Projects/GitRepo/learning-terraform/single ec2 instace/secret/private_key.pem" **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps'
+                        bat ' "C:/Program Files/Git/usr/bin/scp" -i "D:/Docs/Projects/GitRepo/learning-terraform/single ec2 instace/secret/private_key.pem" **/target/*.war ec2-user@54.90.75.34:/var/lib/tomcat7/webapps'
                     }
                 }
             }
